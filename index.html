@@ -2,104 +2,156 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY - PORTFOLIO</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body{
-            background-color: rgb(0,0,33);
-            color: white;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-        }
-
-        nav{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 60px;
-            background-color: rgb(18,18,62);
-        }
-
-        nav ul{
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li{
-            list-style: none;
-            margin: 0 23px;
-        }
-
-        .left{
-            font-size: 1.5rem;
-        }
-
-        .firstSection{
-            display: flex;
-            justify-content: space-around;
-            margin: 150px 0;
-            align-items: center;
-        }
-
-        .firstSection > div{
-            width: 30%;
-        }
-
-        .leftSection{
-            /* background-color: red; */
-            width: 34px;
-            font-size: 2rem;
-        }
-
-        .rightSection img{
-            width: 130%;
-            /* margin: 50px 0; */
-
-        }
-
-        .purple{
-            color: rgb(170, 107, 228);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>ML Engineer | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 3D Space Background -->
+    <canvas id="bg-canvas"></canvas>
 
-    <header>
-        <nav>
-            <div class="left" >My Portfolio</div>
-            <div class="right" >
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Projects</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <!-- Top Navigation Bar (Buttons at top right) -->
+    <nav class="navbar">
+        <div class="logo">Gaurav<span class="highlight">.ML</span></div>
+        <div class="nav-links">
+            <a href="#home" class="nav-btn active">Home</a>
+            <a href="#about" class="nav-btn">About</a>
+            <a href="#skills" class="nav-btn">Skills</a>
+            <a href="#projects" class="nav-btn">Projects</a>
+            <a href="#contact" class="nav-btn btn-primary-small">Contact</a>
+        </div>
+    </nav>
 
-    <main> 
-        <section class="firstSection">
-            <div class="leftSection">
-                Hi, My name is  <span class="purple"> Chahar </span> 
-                <div>and I am a passionate Machine Learning Engineer</div>
+    <!-- Scrollable Content Sections -->
+    <main class="scroll-container">
+        
+        <!-- Home Section -->
+        <section id="home" class="glass-section fade-in">
+            <div class="content">
+                <div class="text-section">
+                    <h1>Hello, I'm <br><span class="highlight">Gaurav</span></h1>
+                    <h2>Machine Learning Engineer</h2>
+                    <p>Passionate about building intelligent systems, training robust models, and creating intuitive data-driven solutions.</p>
+                    <div class="buttons">
+                        <a href="#projects" class="btn btn-primary">Featured Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+                    </div>
+                </div>
                 
-
+                <div class="photo-section">
+                    <div class="profile-frame">
+                        <img src="https://via.placeholder.com/250/111111/66aaff?text=Photo" alt="Profile Photo" id="profile-photo">
+                    </div>
+                </div>
             </div>
-            <div class="rightSection">
-                <img src="New folder/image1.jpg" alt="bg.jpg">
-            </div>
-
-
         </section>
-    </main>
-    
 
+        <!-- About / Skills Section -->
+        <section id="about" class="glass-section">
+            <div class="content-large">
+                <h2><span class="highlight">About</span> & Skills</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I am a Machine Learning practitioner focused on solving real-world problems. My expertise lies in Deep Learning architectures, Natural Language Processing, and scalable model deployment.</p>
+                        <p>When I'm not tuning hyperparameters, you can find me studying orbital mechanics, astrophysics, and space exploration (hence the theme!).</p>
+                    </div>
+                    <div class="skills-container" id="skills">
+                        <div class="skill-category">
+                            <h3>Languages & Frameworks</h3>
+                            <div class="tech-stack">
+                                <span class="tag">Python</span>
+                                <span class="tag">PyTorch</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">C++</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Data & MLOps</h3>
+                            <div class="tech-stack">
+                                <span class="tag">Pandas</span>
+                                <span class="tag">NumPy</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">AWS SageMaker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="glass-section">
+            <div class="content-large">
+                <h2><span class="highlight">Featured</span> Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card">
+                        <div class="project-img text-center">Neural Net Architecture</div>
+                        <h3>Deep Learning Image Classifier</h3>
+                        <p>Built a ResNet-based classifier achieving 98% accuracy on custom datasets using PyTorch.</p>
+                        <div class="tech-stack"><span class="tag">PyTorch</span><span class="tag">Vision</span></div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="project-card">
+                        <div class="project-img text-center">Predictive Models</div>
+                        <h3>Time-Series Sales Predictor</h3>
+                        <p>LSTM model deployment to forecast monthly active sales with an 15% reduction in MAPE.</p>
+                        <div class="tech-stack"><span class="tag">TensorFlow</span><span class="tag">Time-Series</span></div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="project-card">
+                        <div class="project-img text-center">NLP Analysis</div>
+                        <h3>Sentiment Analysis API</h3>
+                        <p>Real-time transformer-based sentiment analysis deployed via FastAPI and Docker.</p>
+                        <div class="tech-stack"><span class="tag">HuggingFace</span><span class="tag">FastAPI</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="glass-section">
+            <div class="content-small">
+                <h2>Let's <span class="highlight">Connect</span></h2>
+                <p>I'm currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary" onclick="event.preventDefault(); alert('Message feature coming soon!')">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+    
+    <!-- Simple script for active nav styling on scroll -->
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
