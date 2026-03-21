@@ -2,156 +2,447 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-width=1.0">
-    <title>ML Engineer | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio — Developer, Designer & Creator. Explore my projects, skills, and get in touch.">
+    <title>Portfolio | Gaurav</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 3D Space Background -->
-    <canvas id="bg-canvas"></canvas>
+    <!-- Three.js Canvas -->
+    <canvas id="three-canvas"></canvas>
 
-    <!-- Top Navigation Bar (Buttons at top right) -->
-    <nav class="navbar">
-        <div class="logo">Gaurav<span class="highlight">.ML</span></div>
-        <div class="nav-links">
-            <a href="#home" class="nav-btn active">Home</a>
-            <a href="#about" class="nav-btn">About</a>
-            <a href="#skills" class="nav-btn">Skills</a>
-            <a href="#projects" class="nav-btn">Projects</a>
-            <a href="#contact" class="nav-btn btn-primary-small">Contact</a>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>G<span class="logo-dot">.</span>Dev<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Scrollable Content Sections -->
-    <main class="scroll-container">
-        
-        <!-- Home Section -->
-        <section id="home" class="glass-section fade-in">
-            <div class="content">
-                <div class="text-section">
-                    <h1>Hello, I'm <br><span class="highlight">Gaurav</span></h1>
-                    <h2>Machine Learning Engineer</h2>
-                    <p>Passionate about building intelligent systems, training robust models, and creating intuitive data-driven solutions.</p>
-                    <div class="buttons">
-                        <a href="#projects" class="btn btn-primary">Featured Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-content">
+            <!-- <div class="hero-badge animate-on-scroll">
+                <span class="badge-dot"></span>
+                Available for work
+            </div> -->
+            <h1 class="hero-title animate-on-scroll">
+                <span class="hero-line">Hi, I'm</span>
+                <span class="hero-name gradient-text">Gaurav Chahar</span>
+            </h1>
+            <p class="hero-subtitle animate-on-scroll">
+                <span class="typewriter" id="typewriter"></span><span class="typewriter-cursor">|</span>
+            </p>
+            <p class="hero-description animate-on-scroll">
+                Machine Learning Engineer & Android Developer specializing in Deep Learning,
+                Computer Vision, and intelligent mobile applications that solve real-world problems.
+            </p>
+            <div class="hero-cta animate-on-scroll">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+            <!-- <div class="hero-stats animate-on-scroll">
+                <div class="stat">
+                    <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="2">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Years Exp.</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+            </div> -->
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </div>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+            
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <p class="section-subtitle">A glimpse into who I am and what drives me</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-wrapper animate-on-scroll">
+                    <div class="about-image-container">
+                        <div class="about-image-placeholder">
+                            <img src="images/MyImage.jpeg" alt="image">
+                        </div>
+                        <div class="about-image-border"></div>
+                        <div class="about-image-glow"></div>
+                    </div>
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <h3 class="about-heading">Machine Learning Engineer & Android App Developer</h3>
+                    <p class="about-text">
+                        I'm a Machine Learning Engineer and Android Developer passionate about building 
+                        intelligent systems and real-world applications. I specialize in Deep Learning, 
+                        Computer Vision, and AI-powered mobile applications.
+                    </p>
+                    <p class="about-text">
+                        My work focuses on transforming data into smart solutions — from building 
+                            machine learning models for prediction and recognition to developing 
+                            Android applications that integrate powerful AI capabilities. 
+                            I enjoy solving complex problems, optimizing models, and creating 
+                            impactful technology.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>India</span>
+                        </div>
+                        <div class="detail-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                            <span>Freelance / Open to Work</span>
+                        </div>
+                        <div class="detail-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            <span>Always Learning</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Let's Connect</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card animate-on-scroll" data-delay="0">
+                    <div class="skill-icon" style="--skill-color: #E44D26;">
+                        <span>H5</span>
+                    </div>
+                    <h4>HTML5</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                </div>
+                <div class="skill-card animate-on-scroll" data-delay="100">
+                    <div class="skill-icon" style="--skill-color: #2965f1;">
+                        <span>CSS</span>
+                    </div>
+                    <h4>CSS3</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                </div>
+                <div class="skill-card animate-on-scroll" data-delay="200">
+                    <div class="skill-icon" style="--skill-color: #F7DF1E;">
+                        <span>JS</span>
+                    </div>
+                    <h4>JavaScript</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                </div>
+                <div class="skill-card animate-on-scroll" data-delay="300">
+                    <div class="skill-icon" style="--skill-color: #61DAFB;">
+                        <span>C</span>
+                    </div>
+                    <h4>C</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                </div>
+                <div class="skill-card animate-on-scroll" data-delay="400">
+                    <div class="skill-icon" style="--skill-color: #68A063;">
+                        <span>C++</span>
+                    </div>
+                    <h4>CPP</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                </div>
+                <div class="skill-card animate-on-scroll" data-delay="500">
+                    <div class="skill-icon" style="--skill-color: #7B42BC;">
+                        <span>Kt</span>
+                    </div>
+                    <h4>Kotlin</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+                </div>
+                <div class="skill-card animate-on-scroll" data-delay="600">
+                    <div class="skill-icon" style="--skill-color: #00D8FF;">
+                        <span>java</span>
+                    </div>
+                    <h4>Java</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+                </div>
+                <div class="skill-card animate-on-scroll" data-delay="700">
+                    <div class="skill-icon" style="--skill-color: #F05032;">
+                        <span>Gt</span>
+                    </div>
+                    <h4>Git</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                </div>
+                <div class="skill-card animate-on-scroll" data-delay="700">
+                    <div class="skill-icon" style="--skill-color: #F7DF1E;">
+                        <span>DSA</span>
+                    </div>
+                    <h4>DSA</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="section-subtitle">A selection of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card animate-on-scroll" data-delay="300">
+                    <div class="project-image">
+                        <img src="images/plant.jpg" alt="Plant disease image" class="project-img">
+                        <div class="project-overlay">
+                            <a href="https://github.com/GauravChahar0/Plant-Disease-Detection" class="project-link" aria-label="View project">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <!-- <a href="#" class="project-link" aria-label="View code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI-Based Plant Disease Detection Using Leaf Images</h3>
+                        <p>An AI-powered plant disease detection system that analyzes leaf images captured via a mobile camera to identify crop diseases in real time. The system leverages deep learning–based computer vision models trained on agricultural datasets to classify diseases and provide actionable treatment recommendations, helping farmers reduce crop loss and improve productivity</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Android</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="photo-section">
-                    <div class="profile-frame">
-                        <img src="https://via.placeholder.com/250/111111/66aaff?text=Photo" alt="Profile Photo" id="profile-photo">
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- About / Skills Section -->
-        <section id="about" class="glass-section">
-            <div class="content-large">
-                <h2><span class="highlight">About</span> & Skills</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>I am a Machine Learning practitioner focused on solving real-world problems. My expertise lies in Deep Learning architectures, Natural Language Processing, and scalable model deployment.</p>
-                        <p>When I'm not tuning hyperparameters, you can find me studying orbital mechanics, astrophysics, and space exploration (hence the theme!).</p>
-                    </div>
-                    <div class="skills-container" id="skills">
-                        <div class="skill-category">
-                            <h3>Languages & Frameworks</h3>
-                            <div class="tech-stack">
-                                <span class="tag">Python</span>
-                                <span class="tag">PyTorch</span>
-                                <span class="tag">TensorFlow</span>
-                                <span class="tag">C++</span>
-                            </div>
+                <!-- Project 2 -->
+                <div class="project-card animate-on-scroll" data-delay="150">
+                    <div class="project-image">
+                        <img src="images/videoImage.jpg" alt="Video app image" class="project-img">
+                        <div class="project-overlay">
+                            <a href="https://github.com/GauravChahar0/VideoPlayerApp" class="project-link" aria-label="View project">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <!-- <a href="#" class="project-link" aria-label="View code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </a> -->
                         </div>
-                        <div class="skill-category">
-                            <h3>Data & MLOps</h3>
-                            <div class="tech-stack">
-                                <span class="tag">Pandas</span>
-                                <span class="tag">NumPy</span>
-                                <span class="tag">Docker</span>
-                                <span class="tag">AWS SageMaker</span>
-                            </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Video Player App</h3>
+                        <p>A high-performance Android multimedia player engineered for seamless video playback and enhanced visual quality. It integrates adaptive playback speed control, gesture-driven navigation, and AI-powered image/video upscaling to improve media clarity and interaction. Built with Material Design principles, the application delivers a sleek, responsive, and visually refined user experience.</p>
+                        <div class="project-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">ExoPlayer</span>
+                            <span class="tag">Material UI</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="glass-section">
-            <div class="content-large">
-                <h2><span class="highlight">Featured</span> Projects</h2>
-                <div class="projects-grid">
-                    <!-- Project Card 1 -->
-                    <div class="project-card">
-                        <div class="project-img text-center">Neural Net Architecture</div>
-                        <h3>Deep Learning Image Classifier</h3>
-                        <p>Built a ResNet-based classifier achieving 98% accuracy on custom datasets using PyTorch.</p>
-                        <div class="tech-stack"><span class="tag">PyTorch</span><span class="tag">Vision</span></div>
+                <!-- Project 3 -->
+                <div class="project-card animate-on-scroll" data-delay="300">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                        </div>
+                        <div class="project-overlay">
+                            <!-- <a href="#" class="project-link" aria-label="View project">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="#" class="project-link" aria-label="View code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </a> -->
+                        </div>
                     </div>
-                    <!-- Project Card 2 -->
-                    <div class="project-card">
-                        <div class="project-img text-center">Predictive Models</div>
-                        <h3>Time-Series Sales Predictor</h3>
-                        <p>LSTM model deployment to forecast monthly active sales with an 15% reduction in MAPE.</p>
-                        <div class="tech-stack"><span class="tag">TensorFlow</span><span class="tag">Time-Series</span></div>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="project-card">
-                        <div class="project-img text-center">NLP Analysis</div>
-                        <h3>Sentiment Analysis API</h3>
-                        <p>Real-time transformer-based sentiment analysis deployed via FastAPI and Docker.</p>
-                        <div class="tech-stack"><span class="tag">HuggingFace</span><span class="tag">FastAPI</span></div>
+                    <div class="project-info">
+                        <h3>3D Portfolio</h3>
+                        <p>This very website is an interactive developer portfolio built using Three.js, featuring real-time particle systems and immersive visual effects incorporating glassmorphism-based UI and scroll-driven animations to create a dynamic, visually engaging browsing experience.</p>
+                        <div class="project-tags">
+                            <span class="tag">Three.js</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <!-- Project 4 -->
+                <div class="project-card animate-on-scroll" data-delay="300">
+                    <div class="project-image">
+                        <img src="images/engtohindi.jpg" alt="Eng to Hindi Translation" class="project-img">
+                        <div class="project-overlay">
+                            <a href="https://github.com/GauravChahar0/EnglishToHindiTranslation_for_Public_Notices" class="project-link" aria-label="View project">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <!-- <a href="#" class="project-link" aria-label="View code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>English to Hindi Translation for public notice</h3>
+                        <p>A machine learning-powered translation system for converting English public notices and official documents to Hindi using IndicTrans2, deployed as an interactive web application.</p>
+                        <div class="project-tags">
+                            <span class="tag">Three.js</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="glass-section">
-            <div class="content-small">
-                <h2>Let's <span class="highlight">Connect</span></h2>
-                <p>I'm currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-primary" onclick="event.preventDefault(); alert('Message feature coming soon!')">Send Message</button>
+                <!-- Project 5 -->
+                <div class="project-card animate-on-scroll" data-delay="0">
+                    <div class="project-image">
+                        <img src="images/weatherimage.jpg" alt="Weather Dashboard" class="project-img">
+                        <div class="project-overlay">
+                            <a href="https://github.com/GauravChahar0/WeatherApp" class="project-link" aria-label="View project">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <!-- <a href="#" class="project-link" aria-label="View code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather Dashboard</h3>
+                        <p>A real-time weather intelligence application that provides accurate atmospheric data through dynamic and visually engaging dashboards. The platform integrates the OpenWeather API to retrieve live weather metrics and deliver detailed insights including temperature, humidity, wind speed, and precipitation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">API</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle">Have a project in mind? Let's work together</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <h3>Let's talk about your project</h3>
+                    <p>I'm always excited to work on new projects and collaborate with amazing people. Drop me a message and I'll get back to you as soon as possible.</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">gchahar867@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/GauravChahar0" class="social-link" aria-label="GitHub">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gaurav-chahar/" class="social-link" aria-label="LinkedIn">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <!-- <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a> -->
+                    </div>
+                </div>
+                <form class="contact-form animate-on-scroll" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Your Email</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required placeholder=" ">
+                        <label for="subject">Subject</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Your Message</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span>Send Message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                    <div class="form-status" id="form-status"></div>
                 </form>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#hero" class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>G<span class="logo-dot">.</span>Dev<span class="logo-bracket">/&gt;</span>
+                </a>
+                <p class="footer-copyright">&copy; 2026 Gaurav. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Three.js CDN -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="main.js"></script>
-    
-    <!-- Simple script for active nav styling on scroll -->
-    <script>
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
